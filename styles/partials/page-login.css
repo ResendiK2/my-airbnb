@@ -1,12 +1,13 @@
 #pages-login #container {
   width: 100vw;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-#pages-login {
+#pages-login .page-header {
+  height: 60px;
+}
+
+#pages-contact .page-header .header-content {
   margin-bottom: 6.4rem;
 }
 
@@ -15,7 +16,8 @@
   width: 100%;
   max-width: 50rem;
   border-radius: 0.8rem;
-  padding: 5rem 0 6rem 0;
+  margin: 3.2rem auto 3.2rem;
+  padding-top: 8rem;
 }
 
 #pages-login fieldset {
@@ -100,9 +102,8 @@
   margin-top: 3.2rem;
 }
 
-#pages-login a {
+#pages-login .link-button {
   color: rgb(50, 99, 191);
-  background: #fff;
   height: 3rem;
   margin-top: 1rem;
   margin-bottom: -2.5rem;
