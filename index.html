@@ -5,43 +5,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>My Arbnb</title>
+    <title>Class</title>
 
     <link rel="stylesheet" href="./styles/main.css">
     <link rel="stylesheet" href="./styles/partials/forms.css">
-    <link rel="stylesheet" href="./styles/partials/pages-login.css">
+    <link rel="stylesheet" href="./styles/partials/page-home.css">
+    <link rel="stylesheet" href="./styles/partials/header.css">
 
     <link
         href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap"
         rel="stylesheet">
 </head>
 
-<body id="pages-login">
+<body id="pages-home">
+
     <div id="container">
-        <main>
-            <form action="" id="create-class">
-                <fieldset>
+        <header class="page-header">
 
-                    <legend>Login</legend>
+            <div class="top-bar-container">
+                <a href="/" class="menu-selected">
+                    Home
+                </a>
 
-                    <div class="input-block">
-                        <label for="email">E-mail:</label>
-                        <input name="email" id="email" required>
-                    </div>
+                <a href="/contact.html" class="menu">
+                    Contato
+                </a>
 
-                    <div class="input-block">
-                        <label for="password">Senha:</label>
-                        <input name="password" id="password" type="password" required>
-                    </div>
+                <a href="/login.html" class="menu">
+                    Entrar
+                </a>
+            </div>
 
-                </fieldset>
-            </form>
-
-            <footer>
-                <button type="submit" form="create-class">Entrar</button>
-                <a href="/cadastre.html">Cadastrar-se</a>
-            </footer>
-        </main>
+            <div class="header-content">
+                <strong>My Airbnb 🧳🛫</strong>
+                <p>Todo mundo merece um descanso, venha aproveitar!</p>
+            </div>
+        </header>
     </div>
 
 </body>

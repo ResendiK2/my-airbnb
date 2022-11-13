@@ -1,0 +1,22 @@
+#pages-home #container {
+  width: 100vw;
+  height: 100vh;
+}
+
+#pages-login .page-header {
+  height: 60px;
+}
+
+#pages-home .page-header .header-content {
+  margin-bottom: 6.4rem;
+}
+
+@media (min-width: 700px) {
+  #pages-home #container {
+    max-width: 100vw;
+  }
+
+  #pages-home .page-header .header-content {
+    margin-bottom: 0;
+  }
+}
