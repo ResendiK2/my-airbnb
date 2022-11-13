@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Class</title>
+
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/partials/forms.css">
+    <link rel="stylesheet" href="./styles/partials/page-contact.css">
+    <link rel="stylesheet" href="./styles/partials/header.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap"
+        rel="stylesheet">
+</head>
+
+<body id="pages-contact">
+
+    <div id="container">
+        <header class="page-header">
+
+            <div class="top-bar-container">
+                <a href="/" class="menu">
+                    Home
+                </a>
+
+                <a href="/contact.html" class="menu-selected">
+                    Contato
+                </a>
+
+                <a href="/login.html" class="menu">
+                    Entrar
+                </a>
+            </div>
+
+            <div class="header-content">
+                <strong>Fala com a gente! 💬</strong>
+                <p>Não guarde rancor, guarde dinheiro para viajar.</p>
+            </div>
+
+        </header>
+
+        <main>
+            <form action="" id="create-class">
+                <fieldset>
+
+                    <legend>Contato</legend>
+
+                    <div class="input-block">
+                        <label for="name">Nome :</label>
+                        <input name="name" id="name" required>
+                    </div>
+
+                    <div class="input-block">
+                        <label for="email">E-mail: </label>
+                        <input name="email" id="email" type="email" required>
+                    </div>
+
+                    <div class="input-block">
+                        <label for="phoneNumber">Numero de Telefone: <small>(Ex: 35997984745)</small></label>
+                        <input name="phoneNumber" id="phoneNumber" type="number" required>
+                    </div>
+
+                    <div class="input-block">
+                        <label for="from">Como você chegou até nós: </label>
+                        <div class="radio-option">
+                            <input class="radio" id="option1" name="from" id="from" type="radio" value="instagram">
+                            <small>Instagram</small>
+                        </div>
+                        <div class="radio-option">
+                            <input class="radio" id="option1" name="from" id="from" type="radio" value="facebook">
+                            <small>Facebook</small>
+                        </div>
+                        <div class="radio-option">
+                            <input class="radio" id="option1" name="from" id="from" type="radio" value="ad">
+                            <small>Anuncio</small>
+                        </div>
+                        <div class="radio-option">
+                            <input class="radio" id="option1" name="from" id="from" type="radio" value="recommendation">
+                            <small>Indicação</small>
+                        </div>
+                        <div class="radio-option">
+                            <input class="radio" id="option1" name="from" id="from" type="radio" value="other" checked>
+                            <small>Outro</small>
+                        </div>
+                    </div>
+
+                    <div class="input-block">
+                        <label for="fromBy">Como você chegou até nós: <small>(Caso tenha marcado outro)</small></label>
+                        <input name="fromBy" id="fromBy" type="text" maxlength="50">
+                    </div>
+
+                    <div class="textarea-block">
+                        <label for="message">Mensagem:</label>
+                        <textarea name="message" id="message" required></textarea>
+                    </div>
+
+                </fieldset>
+
+            </form>
+
+            <footer>
+                <button type="submit" form="create-class">Enviar mensagem</button>
+            </footer>
+
+        </main>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+#pages-contact #container {
+  width: 100vw;
+  height: 100vh;
+}
+
+#pages-contact .page-header .header-content {
+  margin-bottom: 6.4rem;
+}
+
+#pages-contact main {
+  background: #fff;
+  width: 100%;
+  max-width: 74rem;
+  border-radius: 0.8rem;
+  margin: 3.2rem auto 3.2rem;
+  padding-top: 8rem;
+}
+
+#pages-contact fieldset {
+  border: none;
+  padding: 0 2.4rem;
+}
+
+#pages-contact fieldset legend {
+  font: 700 2.4rem Archivo;
+  color: #32264d;
+  margin-bottom: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 1.6rem;
+  border-bottom: 1px solid #e6e6f1;
+}
+
+#pages-contact fieldset legend button {
+  background: none;
+  border: none;
+  color: rgb(1, 137, 187);
+  font: 700 1.6 Archivo;
+  cursor: pointer;
+  transition: 0.2;
+}
+
+#pages-contact fieldset legend button::hover {
+  color: rgb(17, 106, 138);
+}
+
+#pages-contact fieldset + fieldset {
+  margin-top: 6.4rem;
+}
+
+#pages-contact .input-block + .input-block,
+#pages-contact .input-block + .textarea-block,
+#pages-contact .input-block + .select-block,
+#pages-contact .select-block + .input-block {
+  margin-top: 2.4rem;
+}
+
+#pages-contact main footer {
+  padding: 4rem 2.4rem;
+  background: #ffffff;
+  border-top: 1px solid #e6e6f1;
+  margin-top: 6.4rem;
+}
+
+#pages-contact main footer p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  color: rgb(133, 133, 133);
+}
+
+#pages-contact main footer p img {
+  margin-right: 2rem;
+}
+
+#pages-contact main footer button {
+  width: 100%;
+  height: 5.6rem;
+  background: rgb(80, 230, 93);
+  color: #fff;
+  border: 0;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  font: 700 1.6rem Archivo;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: 0.2s;
+  margin-top: 3.2rem;
+}
+
+.schedule-item + .schedule-item {
+  margin-top: 3.2rem;
+  padding-top: 3.2rem;
+  border-top: 1px solid #e6e6f1;
+}
+
+@media (min-width: 700px) {
+  #pages-contact #container {
+    max-width: 100vw;
+  }
+
+  #pages-contact .page-header .header-content {
+    margin-bottom: 0;
+  }
+
+  #pages-contact main fieldset {
+    padding: 0 64px;
+  }
+
+  .schedule-item {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    column-gap: 1.6rem;
+  }
+
+  #pages-contact #schedule-items .select-block + .input-block,
+  #pages-contact #schedule-items .input-block + .input-block {
+    margin-top: 0;
+  }
+
+  #pages-contact main footer {
+    padding: 40px 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #pages-contact main footer button {
+    margin-top: 0;
+    width: 200px;
+  }
+}
