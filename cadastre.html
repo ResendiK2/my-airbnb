@@ -7,16 +7,14 @@
 
     <title>Class</title>
 
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="/styles/partials/forms.css">
-    <link rel="stylesheet" href="/styles/partials/pages-cadastre.css">
-    <link rel="stylesheet" href="styles/partials/header.css">
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/partials/forms.css">
+    <link rel="stylesheet" href="./styles/partials/pages-cadastre.css">
+    <link rel="stylesheet" href="./styles/partials/header.css">
 
     <link
         href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap"
         rel="stylesheet">
-
-    <script src="/scripts/addField.js" defer></script>
 </head>
 
 <body id="pages-cadastre">
@@ -26,13 +24,13 @@
 
             <div class="top-bar-container">
                 <a href="/" class="back-menu">
-                    Voltar a Home
+                    Voltar ao Login
                 </a>
             </div>
 
             <div class="header-content">
-                <strong>Bora as Aulas!</strong>
-                <p>Preencha esse formulário de inscrição</p>
+                <strong>Bora viajar! 🧳</strong>
+                <p>Preencha o formulário de inscrição</p>
             </div>
 
         </header>
@@ -45,87 +43,80 @@
 
                     <div class="input-block">
                         <label for="name">Nome completo:</label>
-                        <input name="name" id="name" required>
+                        <input name="name" id="name" type="text" required>
                     </div>
 
                     <div class="input-block">
-                        <label for="avatar">Link da sua foto: <small>(comece com https://)</small></label>
-                        <input name="avatar" id="avatar" type="url" required>
+                        <label for="cpf">CPF: </label>
+                        <input name="cpf" id="cpf" type="text" maxlength="11" minlength="11" required>
                     </div>
 
                     <div class="input-block">
-                        <label for="whatsapp">Whatsapp: <small>(somente numeros)</small></label>
-                        <input name="whatsapp" id="whatsapp" type="numeber" required>
+                        <label for="birthdate">Data de Nascimento: </label>
+                        <input name="birthdate" id="birthdate" type="date" required>
                     </div>
 
-                    <div class="textarea-block">
-                        <label for="bio">Biografia:</label>
-                        <textarea name="bio" id="bio" required></textarea>
+                    <div class="input-block">
+                        <label for="sex">Sexo:</label>
+                        <div class="radio-option">
+                            <input class="radio" id="option1" name="sex" id="sex" type="radio" value="male">
+                            <small>Homem</small>
+                        </div>
+                        <div class="radio-option">
+                            <input class="radio" id="option1" name="sex" id="sex" type="radio" value="female">
+                            <small>Mulher</small>
+                        </div>
+                        <div class="radio-option">
+                            <input class="radio" id="option1" name="sex" id="sex" type="radio" value="other">
+                            <small>Outro</small>
+                        </div>
+                        <div class="radio-option">
+                            <input class="radio" id="option1" name="sex" id="sex" type="radio" value="neutral" checked>
+                            <small>Prefiro não informar</small>
+                        </div>
                     </div>
 
-                </fieldset>
-
-                <fieldset>
-                    <legend>Sobre a Aula</legend>
                     <div class="select-block">
-                        <label for="subject">Matéria:</label>
-                        <select name="subject" id="subject" required>
-                            <option value="" disabled="" hidden="" selected="">Selecione uma opção</option>
-                            <option value="1">Artes</option>
-                            <option value="2">Biologia</option>
-                            <option value="3">Ciências</option>
-                            <option value="4">Educação física</option>
-                            <option value="5">Física</option>
-                            <option value="6">Geografia</option>
-                            <option value="7">História</option>
-                            <option value="8">Matemática</option>
-                            <option value="9">Português</option>
-                            <option value="10">Química</option>
+                        <label for="maritalStatus">Estado civil:</label>
+                        <select name="maritalStatus" id="maritalStatus" required>
+                            <option value="Solteiro" disabled="" hidden="" selected="">Selecione uma opção</option>
+                            <option value="Solteiro">Solteiro</option>
+                            <option value="Separado">Separado</option>
+                            <option value="Divorciado">Divorciado</option>
+                            <option value="Viúvo">Viúvo</option>
                         </select>
-
-                        <div class="input-block">
-                            <label for="cost">Custo da sua hora/aula
-                                <small>(R$)</small>
-                            </label>
-                            <input type="cost" id="cost" type="number" required>
-                        </div>
-                    </div>
-                </fieldset>
-
-                <fieldset id="schedule-items">
-                    <legend>Horários disponíveis
-                        <button id="add-time" type="button">+ Novo Horário</button>
-                    </legend>
-
-                    <div class="schedule-item">
-                        <div class="select-block">
-                            <label for="weekday">Dia da semana</label>
-                            <select name="weekday[]" required>
-                                <option value="" disabled="" hidden="" selected="">Selecione uma opção</option>
-                                <option value="0">Domingo</option>
-                                <option value="1">Segunda-feira</option>
-                                <option value="2">Terça-feira</option>
-                                <option value="3">Quarta-feira</option>
-                                <option value="4">Quinta-feira</option>
-                                <option value="5">Sexta-feira</option>
-                                <option value="6">Sábado</option>
-                            </select>
-                        </div>
-
-                        <div class="input-block">
-                            <label for="time_from">Das</label>
-                            <input type="time" name="time_from[]" required>
-                        </div>
-
-                        <div class="input-block">
-                            <label for="time_to">Até</label>
-                            <input type="time" name="time_to[]" required>
-                        </div>
-
                     </div>
 
-                </fieldset>
+                    <div class="input-block">
+                        <label for="city">Cidade:</label>
+                        <input name="city" id="city" type="text" required>
+                    </div>
 
+                    <div class="input-block">
+                        <label for="state">Estado: <small>(UF)</small></label>
+                        <input name="state" id="state" type="text" maxlength="2" minlength="2" required>
+                    </div>
+
+                    <div class="input-block">
+                        <label for="cep">CEP: <small>(somente números)</small></label>
+                        <input name="cep" id="cep" type="number" maxlength="11" minlength="11" required>
+                    </div>
+
+                    <div class="input-block">
+                        <label for="email">E-mail:</label>
+                        <input name="email" id="email" type="email" required>
+                    </div>
+
+                    <div class="input-block">
+                        <label for="password">Senha:</label>
+                        <input name="password" id="password" type="password" minlength="6" required>
+                    </div>
+
+                    <div class="input-block">
+                        <label for="passwordConfirm">Confirme sua senha:</label>
+                        <input name="passwordConfirm" id="passwordConfirm" type="password" minlength="6" required>
+                    </div>
+                </fieldset>
             </form>
 
             <footer>
