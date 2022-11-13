@@ -52,9 +52,7 @@
   margin-top: 6.4rem;
 }
 
-#pages-login .input-block + .input-block,
-#pages-login .input-block + .textarea-block,
-#pages-login .select-block + .input-block {
+#pages-login .input-block + .input-block {
   margin-top: 2.4rem;
 }
 
@@ -136,7 +134,6 @@
     column-gap: 1.6rem;
   }
 
-  #pages-login #schedule-items .select-block + .input-block,
   #pages-login #schedule-items .input-block + .input-block {
     margin-top: 0;
   }
