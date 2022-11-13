@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Arbnb</title>
+
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/partials/forms.css">
+    <link rel="stylesheet" href="./styles/partials/page-login.css">
+    <link rel="stylesheet" href="./styles/partials/header.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap"
+        rel="stylesheet">
+</head>
+
+<body id="pages-login">
+    <div id="container">
+        <header class="page-header">
+
+            <div class="top-bar-container">
+                <a href="/" class="menu">
+                    Home
+                </a>
+
+                <a href="/contact.html" class="menu">
+                    Contato
+                </a>
+
+                <a href="/login.html" class="menu-selected">
+                    Entrar
+                </a>
+            </div>
+        </header>
+
+        <main>
+            <form action="" id="create-class">
+                <fieldset>
+
+                    <legend>Login</legend>
+
+                    <div class="input-block">
+                        <label for="email">E-mail:</label>
+                        <input name="email" id="email" required>
+                    </div>
+
+                    <div class="input-block">
+                        <label for="password">Senha:</label>
+                        <input name="password" id="password" type="password" required>
+                    </div>
+
+                </fieldset>
+            </form>
+
+            <footer>
+                <button type="submit" form="create-class">Entrar</button>
+                <a class="link-button" href="/cadastre.html">Cadastrar-se</a>
+            </footer>
+        </main>
+    </div>
+
+</body>
+
+</html>
