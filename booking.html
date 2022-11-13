@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Arbnb</title>
+
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/partials/forms.css">
+    <link rel="stylesheet" href="./styles/partials/page-booking.css">
+    <link rel="stylesheet" href="./styles/partials/header.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap"
+        rel="stylesheet">
+</head>
+
+<body id="pages-booking">
+
+    <div id="container">
+        <header class="page-header">
+
+            <div class="top-bar-container">
+                <div class="back-container">
+                    <a href="/accommodation.html" class="menu">
+                        Voltar
+                    </a>
+                </div>
+                <div class="menu-container">
+                    <a href="/" class="menu">
+                        Home
+                    </a>
+
+                    <a href="/accommodation.html" class="menu-selected">
+                        Hospedagens
+                    </a>
+
+                    <a href="/contact.html" class="menu">
+                        Contato
+                    </a>
+
+                    <a href="/login.html" class="menu">
+                        Entrar
+                    </a>
+                </div>
+            </div>
+
+            <div class="header-content">
+                <strong>Quase lá! 😮‍💨</strong>
+                <p>Falta pouco agora, vamos só confirmar umas coisinhas...</p>
+            </div>
+
+        </header>
+
+        <main>
+            <form action="" id="create-class">
+                <fieldset>
+
+                    <legend>Dados da reserva</legend>
+
+                    <div class="input-block">
+                        <label for="entryDate">Data de entrada:</label>
+                        <input name="entryDate" id="entryDate" type="date" required>
+                    </div>
+
+                    <div class="input-block">
+                        <label for="departureDate">Data de saída:</label>
+                        <input name="departureDate" id="departureDate" type="date" required>
+                    </div>
+
+                    <div class="input-block">
+                        <label for="numberOfAdults">Quantidade de adultos: <small>(Maiores de 12 anos)</small></label>
+                        <input name="numberOfAdults" id="numberOfAdults" type="number" min="0" required>
+                    </div>
+
+                    <div class="input-block">
+                        <label for="numberOfChildren">Quantidade de crianças: <small>(de 4 até 12
+                                anos)</small></label>
+                        <input name="numberOfChildren" id="numberOfChildren" type="number" min="0" required>
+                    </div>
+
+                    <div class="input-block">
+                        <label for="numberOfSmallChildren">Quantidade de crianças pequenas: <small>(até 3
+                                anos)</small></label>
+                        <input name="numberOfSmallChildren" id="numberOfSmallChildren" type="number" min="0" required>
+                    </div>
+            </form>
+
+            <footer>
+                <p>
+                    Importante! <br> Preencha todos os dados
+                </p>
+                <button type="submit" form="create-class">Fazer reserva!</button>
+            </footer>
+
+        </main>
+    </div>
+
+</body>
+
+</html>
