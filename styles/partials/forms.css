@@ -1,11 +1,17 @@
 .select-block label,
 .input-block label,
+.input-block-radio label,
 .textarea-block label {
   font-size: 1.5rem;
   color: rgb(138, 137, 137);
 }
 
-.input-block .textarea-block {
+.input-block-radio label {
+  font-size: 1.5rem;
+  color: rgb(138, 137, 137);
+}
+
+.input-block .input-block-radio .textarea-block {
   position: relative;
 }
 
@@ -21,6 +27,19 @@
   outline: 0;
   padding: 0 1.6rem;
   font: 1.6rem Archivo;
+}
+
+.radio-option {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.radio-option input {
+  height: 2rem;
+  width: 2rem;
+  margin: 0 1rem 0 0;
 }
 
 .textarea-block textarea {
