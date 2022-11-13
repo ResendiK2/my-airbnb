@@ -52,6 +52,7 @@
 
 #pages-cadastre .input-block + .input-block,
 #pages-cadastre .input-block + .textarea-block,
+#pages-cadastre .input-block + .select-block,
 #pages-cadastre .select-block + .input-block {
   margin-top: 2.4rem;
 }
