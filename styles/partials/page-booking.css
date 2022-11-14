@@ -12,6 +12,11 @@
   left: 20rem;
 }
 
+#pages-cadastre .menu-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
 #pages-booking main {
   background: #fff;
   width: 100%;
@@ -122,11 +127,6 @@
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     column-gap: 1.6rem;
-  }
-
-  #pages-booking #schedule-items .select-block + .input-block,
-  #pages-booking #schedule-items .input-block + .input-block {
-    margin-top: 0;
   }
 
   #pages-booking main footer {

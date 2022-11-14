@@ -7,6 +7,16 @@
   margin-bottom: 6.4rem;
 }
 
+#pages-cadastre .back-container {
+  position: absolute;
+  left: 20rem;
+}
+
+#pages-cadastre .menu-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
 #pages-cadastre main {
   background: #fff;
   width: 100%;
