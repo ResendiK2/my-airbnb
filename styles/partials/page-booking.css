@@ -63,7 +63,7 @@
 }
 
 #pages-booking main footer {
-  padding: 4rem 2.4rem;
+  padding: 4rem 0;
   background: #ffffff;
   border-top: 1px solid #e6e6f1;
   margin-top: 6.4rem;
@@ -130,7 +130,6 @@
   }
 
   #pages-booking main footer {
-    padding: 40px 64px;
     display: flex;
     align-items: center;
     justify-content: space-between;
