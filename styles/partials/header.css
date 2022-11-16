@@ -43,7 +43,7 @@
 
 .page-header .header-content {
   width: 100%;
-  margin: 3.2rem auto;
+  margin: 0.2rem auto;
   position: relative;
 }
 
@@ -55,9 +55,8 @@
 
 .page-header .header-content p {
   font-size: 1.6rem;
-  line-height: 2.6rem;
+  line-height: 2.5rem;
   color: #fff;
-  margin-top: 1.2rem;
 }
 
 @media (min-width: 700px) {
