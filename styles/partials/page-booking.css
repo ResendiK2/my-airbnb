@@ -12,7 +12,7 @@
   left: 20rem;
 }
 
-#pages-cadastre .menu-container {
+#pages-booking .menu-container {
   display: flex;
   justify-content: flex-end;
 }
@@ -68,7 +68,7 @@
 }
 
 #pages-booking main footer {
-  padding: 4rem 0;
+  padding: 4rem 0rem;
   background: #ffffff;
   border-top: 1px solid #e6e6f1;
   margin-top: 6.4rem;
@@ -127,6 +127,11 @@
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     column-gap: 1.6rem;
+  }
+
+  #pages-booking #schedule-items .select-block + .input-block,
+  #pages-booking #schedule-items .input-block + .input-block {
+    margin-top: 0;
   }
 
   #pages-booking main footer {
