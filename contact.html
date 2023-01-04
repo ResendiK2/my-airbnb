@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./styles/partials/forms.css">
     <link rel="stylesheet" href="./styles/partials/page-contact.css">
     <link rel="stylesheet" href="./styles/partials/header.css">
+    <link rel="stylesheet" href="./styles/partials/error.css">
 
     <link
         href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap"
@@ -55,40 +56,48 @@
 
                     <div class="input-block">
                         <label for="name">Nome :</label>
-                        <input name="name" id="name" required>
+                        <input name="name" id="name" required onblur="checkContactName()">
                     </div>
+                    <div id="name-error" class="error"></div>
 
                     <div class="input-block">
                         <label for="email">E-mail: </label>
-                        <input name="email" id="email" type="email" required>
+                        <input name="email" id="email" type="email" required onblur="checkEmail()">
                     </div>
+                    <div id="email-error" class="error"></div>
 
                     <div class="input-block">
-                        <label for="phoneNumber">Numero de Telefone: <small>(Ex: 35997984745)</small></label>
-                        <input name="phoneNumber" id="phoneNumber" type="number" required>
+                        <label for="phoneNumber">Numero de Telefone: <small>Ex: (11)99918-4645</small></label>
+                        <input name="phoneNumber" id="phoneNumber" type="text" placeholder="(11)99918-4645"
+                            minlength="14" maxlength="14" required onblur="checkPhoneNumber()">
                     </div>
+                    <div id="phoneNumber-error" class="error"></div>
 
                     <div class="input-block">
                         <label for="from">Como você chegou até nós: </label>
                         <div class="radio-option">
-                            <input class="radio" id="option1" name="from" id="from" type="radio" value="instagram">
-                            <small>Instagram</small>
+                            <input class="radio" id="option1" name="from" id="from" type="radio" value="Jornais">
+                            <small>Jornais</small>
                         </div>
                         <div class="radio-option">
-                            <input class="radio" id="option1" name="from" id="from" type="radio" value="facebook">
-                            <small>Facebook</small>
-                        </div>
-                        <div class="radio-option">
-                            <input class="radio" id="option1" name="from" id="from" type="radio" value="ad">
-                            <small>Anuncio</small>
-                        </div>
-                        <div class="radio-option">
-                            <input class="radio" id="option1" name="from" id="from" type="radio" value="recommendation">
+                            <input class="radio" id="option1" name="from" id="from" type="radio" value="Indicação">
                             <small>Indicação</small>
                         </div>
                         <div class="radio-option">
-                            <input class="radio" id="option1" name="from" id="from" type="radio" value="other" checked>
-                            <small>Outro</small>
+                            <input class="radio" id="option1" name="from" id="from" type="radio" value="Redes Sociais">
+                            <small>Redes Sociais</small>
+                        </div>
+                        <div class="radio-option">
+                            <input class="radio" id="option1" name="from" id="from" type="radio" value="Google">
+                            <small>Google</small>
+                        </div>
+                        <div class="radio-option">
+                            <input class="radio" id="option1" name="from" id="from" type="radio" value="Revistas">
+                            <small>Revistas</small>
+                        </div>
+                        <div class="radio-option">
+                            <input class="radio" id="option1" name="from" id="from" type="radio" value="Outros" checked>
+                            <small>Outros</small>
                         </div>
                     </div>
 
@@ -99,9 +108,9 @@
 
                     <div class="textarea-block">
                         <label for="message">Mensagem:</label>
-                        <textarea name="message" id="message" required></textarea>
+                        <textarea name="message" id="message" required onblur="checkRequire('message')"></textarea>
                     </div>
-
+                    <div id="message-error" class="error"></div>
                 </fieldset>
 
             </form>
@@ -112,7 +121,7 @@
 
         </main>
     </div>
-
+    <script src="scripts/form-validation.js"> </script>
 </body>
 
 </html>
