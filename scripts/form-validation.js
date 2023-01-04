@@ -15,8 +15,9 @@ function checkRequire(id) {
 function setInputError(id, error) {
   let inputs = document.getElementsByClassName("input-block");
   let selects = document.getElementsByClassName("select-block");
+  let longText = document.getElementsByClassName("textarea-block");
 
-  const fields = [...inputs, ...selects];
+  const fields = [...inputs, ...selects, ...longText];
 
   for (let i = 0; i < (fields || []).length; i++)
     for (let j = 0; j < (fields[i].children || []).length; j++) {
@@ -41,7 +42,7 @@ function checkEmail() {
 
   //   if (!isLower(field.value)) return;
 
-  if (!firstIsLetter(field.value, error)) {
+  if (!firstIsLetter(field.value)) {
     error.innerHTML = "Email invalido!";
     setInputError("email", true);
     return;
@@ -72,7 +73,7 @@ function checkCompleteName() {
 
   if (!checkRequire("name")) return;
 
-  if (!completeName(field.value, error)) {
+  if (!completeName(field.value)) {
     setInputError("name", true);
     error.innerHTML = "Nome muito curto!";
     return;
@@ -112,7 +113,7 @@ function checkCPF() {
 
   if (!checkRequire("cpf")) return;
 
-  if (!validateCPF(field.value, error)) {
+  if (!validateCPF(field.value)) {
     setInputError("cpf", true);
     error.innerHTML = "CPF inválido!";
     return;
@@ -153,7 +154,7 @@ function checkBirthDate() {
 
   if (!checkRequire("birthdate")) return;
 
-  if (!validateBirthDate(field.value, error)) {
+  if (!validateBirthDate(field.value)) {
     setInputError("birthdate", true);
     error.innerHTML = "Data inválida!";
     return;
@@ -178,7 +179,7 @@ function checkUF() {
 
   if (!checkRequire("state")) return;
 
-  if (!validateState(field.value, error)) {
+  if (!validateState(field.value)) {
     setInputError("state", true);
     error.innerHTML = "UF inválida!";
     return;
@@ -203,7 +204,7 @@ function checkCEP() {
 
   if (!checkRequire("cep")) return;
 
-  if (!validateCep(field.value, error)) {
+  if (!validateCep(field.value)) {
     setInputError("cep", true);
     error.innerHTML = "CEP inválida!";
     return;
@@ -252,4 +253,54 @@ function matchPassword() {
   error.innerHTML = "As senhas devem ser idênticas!";
   setInputError("passwordConfirm", true);
   return false;
+}
+
+function checkContactName() {
+  let field = document.getElementById("name");
+  let error = document.getElementById("name-error");
+  setInputError("name", true);
+
+  if (!checkRequire("name")) return;
+
+  if (!fullName(field.value)) {
+    setInputError("name", true);
+    error.innerHTML = "Nome inválido!";
+    return;
+  }
+
+  error.innerHTML = "";
+  setInputError("name");
+}
+
+function fullName(value) {
+  if (value.length < 3) return false;
+
+  var regexp = new RegExp(/^[A-Za-z]+$/);
+
+  return regexp.exec(value[0]);
+}
+
+function checkPhoneNumber() {
+  let field = document.getElementById("phoneNumber");
+  let error = document.getElementById("phoneNumber-error");
+  setInputError("phoneNumber", true);
+
+  if (!checkRequire("phoneNumber")) return;
+
+  if (!validateNumber(field.value)) {
+    setInputError("phoneNumber", true);
+    error.innerHTML = "Telefone inválido!";
+    return;
+  }
+
+  error.innerHTML = "";
+  setInputError("phoneNumber");
+}
+
+function validateNumber(value) {
+  if (value.length < 3) return false;
+
+  var regexp = new RegExp(/\(\d{2,}\)\d{5,}\-\d{4}/g);
+
+  return regexp.exec(value);
 }
