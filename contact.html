@@ -16,27 +16,36 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap"
         rel="stylesheet">
+    <script type="text/javascript">
+        function isLogged() {
+            const isLog = document.referrer.split('/')
+
+            if (isLog[isLog.length - 1] === 'login.html') {
+                document.getElementById("home").style.display = "none"
+                document.getElementById("accs").style.display = "none"
+            } else {
+                document.getElementById("loggedOut").style.display = "none"
+            }
+        }
+        window.onload = isLogged;
+    </script>
 </head>
 
 <body id="pages-contact">
-
     <div id="container">
         <header class="page-header">
 
             <div class="top-bar-container">
-                <a href="/" class="menu">
+                <a id="home" class="menu" href="/">
                     Home
                 </a>
-
-                <a href="/accommodation.html" class="menu">
+                <a id="accs" class="menu" href="/accommodation.html">
                     Hospedagens
                 </a>
-
                 <a href="/contact.html" class="menu-selected">
                     Contato
                 </a>
-
-                <a href="/login.html" class="menu">
+                <a id="loggedOut" href="/login.html" class="menu">
                     Entrar
                 </a>
             </div>
