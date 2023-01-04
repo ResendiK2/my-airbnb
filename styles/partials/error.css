@@ -5,3 +5,7 @@
   color: rgb(178, 34, 34);
   font-size: 15px;
 }
+
+.disabled {
+  opacity: 0.5;
+}
