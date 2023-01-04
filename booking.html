@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./styles/partials/forms.css">
     <link rel="stylesheet" href="./styles/partials/page-booking.css">
     <link rel="stylesheet" href="./styles/partials/header.css">
+    <link rel="stylesheet" href="./styles/partials/error.css">
 
     <link
         href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap"
@@ -62,30 +63,39 @@
 
                     <div class="input-block">
                         <label for="entryDate">Data de entrada:</label>
-                        <input name="entryDate" id="entryDate" type="date" required>
+                        <input name="entryDate" id="entryDate" type="date" required onblur="checkEntryDate()">
                     </div>
+                    <div id="entryDate-error" class="error"></div>
 
                     <div class="input-block">
                         <label for="departureDate">Data de saída:</label>
-                        <input name="departureDate" id="departureDate" type="date" required>
+                        <input name="departureDate" id="departureDate" type="date" required
+                            onblur="checkDepartureDate()">
                     </div>
+                    <div id="departureDate-error" class="error"></div>
 
                     <div class="input-block">
-                        <label for="numberOfAdults">Quantidade de adultos: <small>(Maiores de 12 anos)</small></label>
-                        <input name="numberOfAdults" id="numberOfAdults" type="number" min="0" required>
+                        <label for="numberOfAdults">Quantidade de adultos: <small>(Maiores de 18 anos)</small></label>
+                        <input name="numberOfAdults" id="numberOfAdults" type="number" min="1" max="4" required
+                            onblur="checkNumberOfAdults()">
                     </div>
+                    <div id="numberOfAdults-error" class="error"></div>
 
                     <div class="input-block">
-                        <label for="numberOfChildren">Quantidade de crianças: <small>(de 4 até 12
+                        <label for="numberOfChildren">Quantidade de crianças: <small>(de 4 até 18
                                 anos)</small></label>
-                        <input name="numberOfChildren" id="numberOfChildren" type="number" min="0" required>
+                        <input name="numberOfChildren" id="numberOfChildren" type="number" min="0" max="3" required
+                            onblur="checkNumberOfChildren()">
                     </div>
+                    <div id="numberOfChildren-error" class="error"></div>
 
                     <div class="input-block">
                         <label for="numberOfSmallChildren">Quantidade de crianças pequenas: <small>(até 3
                                 anos)</small></label>
-                        <input name="numberOfSmallChildren" id="numberOfSmallChildren" type="number" min="0" required>
+                        <input name="numberOfSmallChildren" id="numberOfSmallChildren" type="number" min="0" max="4"
+                            required onblur="checkNumberOfSmallChildren()">
                     </div>
+                    <div id="numberOfSmallChildren-error" class="error"></div>
             </form>
 
             <footer>
@@ -98,6 +108,7 @@
         </main>
     </div>
 
+    <script src="scripts/form-validation.js"> </script>
 </body>
 
 </html>
