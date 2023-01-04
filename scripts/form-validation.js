@@ -41,13 +41,30 @@ function checkEmail() {
   if (!checkRequire("email")) return;
 
   if (!validateEmail(field.value) || noUpper(field.value)) {
-    error.innerHTML = "Email invalido!";
+    error.innerHTML = "Email inválido!";
     setInputError("email", true);
     return;
   }
 
   error.innerHTML = "";
   setInputError("email");
+}
+
+function checkPasswordLogin() {
+  let field = document.getElementById("password");
+  let error = document.getElementById("password-error");
+  setInputError("password", true);
+
+  if (!checkRequire("password")) return;
+
+  if (!validatePassword(field.value)) {
+    error.innerHTML = "Senha inválida!";
+    setInputError("password", true);
+    return;
+  }
+
+  error.innerHTML = "";
+  setInputError("password");
 }
 
 function noUpper(value) {
@@ -221,12 +238,36 @@ function checkPassword() {
   let error = document.getElementById("password-error");
   setInputError("password", true);
 
-  if (!checkRequire("password")) return;
+  if (!checkRequire("password")) {
+    removePasswordForces();
+    return;
+  }
+
+  if (!validatePassword(field.value)) {
+    removePasswordForces();
+    error.innerHTML = "Senha inválida!";
+    setInputError("password", true);
+    return;
+  }
 
   matchPassword();
 
   error.innerHTML = "";
   setInputError("password");
+}
+
+function removePasswordForces() {
+  (document.getElementById("password-strong") || {}).innerHTML = "";
+  (document.getElementById("password-medium") || {}).innerHTML = "";
+  (document.getElementById("password-week") || {}).innerHTML = "";
+}
+
+function validatePassword(value) {
+  if (value.length < 6) return false;
+
+  if (value.length > 12) return false;
+
+  return true;
 }
 
 function checkPasswordConf() {
