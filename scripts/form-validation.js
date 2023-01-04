@@ -304,3 +304,133 @@ function validateNumber(value) {
 
   return regexp.exec(value);
 }
+
+function checkEntryDate() {
+  let field = document.getElementById("entryDate");
+  let error = document.getElementById("entryDate-error");
+  setInputError("entryDate", true);
+
+  if (!checkRequire("entryDate")) return;
+
+  if (!validateEntryDate(field.value)) {
+    setInputError("entryDate", true);
+    error.innerHTML = "Data inválida!";
+    return;
+  }
+
+  error.innerHTML = "";
+  setInputError("entryDate");
+}
+
+function validateEntryDate(value) {
+  if (daysBetween(new Date(), new Date(value)) < 2) return false;
+
+  return true;
+}
+
+function daysBetween(d1, d2) {
+  var diff = d2.getTime() - d1.getTime();
+  return Math.ceil(diff / (1000 * 60 * 60 * 24));
+}
+
+function checkDepartureDate() {
+  let field = document.getElementById("departureDate");
+  let error = document.getElementById("departureDate-error");
+  setInputError("departureDate", true);
+
+  if (!checkRequire("departureDate")) return;
+
+  if (!validateDepartureDate(field.value)) {
+    setInputError("departureDate", true);
+    error.innerHTML = "Data inválida!";
+    return;
+  }
+
+  error.innerHTML = "";
+  setInputError("departureDate");
+}
+
+function validateDepartureDate(value) {
+  if (daysBetween(new Date(), new Date(value)) < 2) return false;
+
+  let field = document.getElementById("entryDate");
+
+  if (daysBetween(new Date(field.value), new Date(value)) < 2) return false;
+
+  return true;
+}
+
+function checkNumberOfAdults() {
+  let field = document.getElementById("numberOfAdults");
+  let error = document.getElementById("numberOfAdults-error");
+  setInputError("numberOfAdults", true);
+
+  if (!checkRequire("numberOfAdults")) return;
+
+  if (!validateNumberOfAdults(field.value)) {
+    setInputError("numberOfAdults", true);
+    error.innerHTML = "Quantidade inválida";
+    return;
+  }
+
+  error.innerHTML = "";
+  setInputError("numberOfAdults");
+}
+
+function validateNumberOfAdults(value) {
+  if (value < 1) return false;
+
+  if (value > 4) return false;
+
+  return true;
+}
+
+function checkNumberOfChildren() {
+  let field = document.getElementById("numberOfChildren");
+  let error = document.getElementById("numberOfChildren-error");
+  setInputError("numberOfChildren", true);
+
+  if (!checkRequire("numberOfChildren")) return;
+
+  if (!validateNumberOfChildren(field.value)) {
+    setInputError("numberOfChildren", true);
+    error.innerHTML = "Quantidade inválida";
+    return;
+  }
+
+  error.innerHTML = "";
+  setInputError("numberOfChildren");
+}
+
+function validateNumberOfChildren(value) {
+  if (value < 0) return false;
+
+  if (value > 3) return false;
+
+  return true;
+}
+
+function checkNumberOfSmallChildren() {
+  let field = document.getElementById("numberOfSmallChildren");
+  let error = document.getElementById("numberOfSmallChildren-error");
+  setInputError("numberOfSmallChildren", true);
+
+  if (!checkRequire("numberOfSmallChildren")) return;
+
+  if (!validateNumberOfSmallChildren(field.value)) {
+    setInputError("numberOfSmallChildren", true);
+    error.innerHTML = "Quantidade inválida";
+    return;
+  }
+
+  error.innerHTML = "";
+  setInputError("numberOfSmallChildren");
+}
+
+function validateNumberOfSmallChildren(value) {
+  if (value < 0) return false;
+
+  if (value > 4) return false;
+
+  return true;
+}
