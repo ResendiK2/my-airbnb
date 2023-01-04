@@ -40,9 +40,7 @@ function checkEmail() {
 
   if (!checkRequire("email")) return;
 
-  //   if (!isLower(field.value)) return;
-
-  if (!firstIsLetter(field.value)) {
+  if (!validateEmail(field.value) || noUpper(field.value)) {
     error.innerHTML = "Email invalido!";
     setInputError("email", true);
     return;
@@ -52,18 +50,16 @@ function checkEmail() {
   setInputError("email");
 }
 
-function isLower(str) {
-  var regexp = new RegExp(/^(.*[a-z].*)(.*\W.*) .+$/);
+function noUpper(value) {
+  var regexp = new RegExp(/^(?=.*[A-Z]).+$/);
 
-  return regexp.exec(str);
+  return regexp.exec(value);
 }
 
-function firstIsLetter(str) {
-  let firstChar = str.charAt(0);
+function validateEmail(value) {
+  var regexp = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
 
-  var regexp = new RegExp(/^[a-z]+$/);
-
-  return regexp.exec(firstChar);
+  return regexp.exec(value);
 }
 
 function checkCompleteName() {
