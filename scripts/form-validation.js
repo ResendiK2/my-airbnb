@@ -25,10 +25,12 @@ function setInputError(id, error) {
 
       if (!error) {
         fields[i].classList.remove("form-error");
+        formValid();
         return;
       }
 
       fields[i].classList.add("form-error");
+      formValid();
       return;
     }
 }
@@ -470,4 +472,18 @@ function validateNumberOfSmallChildren(value) {
   if (value > 4) return false;
 
   return true;
+}
+
+function formValid() {
+  const button = document.getElementById("form-button");
+  const inputs = document.getElementsByClassName("form-error");
+
+  if (!inputs.length) {
+    button.classList.remove("disabled");
+    button.disabled = false;
+    return;
+  }
+
+  button.classList.add("disabled");
+  button.disabled = true;
 }
