@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./styles/partials/forms.css">
     <link rel="stylesheet" href="./styles/partials/page-cadastre.css">
     <link rel="stylesheet" href="./styles/partials/header.css">
+    <link rel="stylesheet" href="./styles/partials/error.css">
 
     <link
         href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap"
@@ -62,18 +63,22 @@
 
                     <div class="input-block">
                         <label for="name">Nome completo:</label>
-                        <input name="name" id="name" type="text" required>
+                        <input name="name" id="name" type="text" required onblur="checkCompleteName()">
                     </div>
+                    <div id="name-error" class="error"></div>
 
                     <div class="input-block">
                         <label for="cpf">CPF: </label>
-                        <input name="cpf" id="cpf" type="text" maxlength="11" minlength="11" required>
+                        <input name="cpf" id="cpf" type="text" maxlength="11" minlength="11" required
+                            onblur="checkCPF()">
                     </div>
+                    <div id="cpf-error" class="error"></div>
 
                     <div class="input-block">
                         <label for="birthdate">Data de Nascimento: </label>
-                        <input name="birthdate" id="birthdate" type="date" required>
+                        <input name="birthdate" id="birthdate" type="date" required onblur="checkBirthDate()">
                     </div>
+                    <div id="birthdate-error" class="error"></div>
 
                     <div class="input-block">
                         <label for="sex">Sexo:</label>
@@ -97,45 +102,54 @@
 
                     <div class="select-block">
                         <label for="maritalStatus">Estado civil:</label>
-                        <select name="maritalStatus" id="maritalStatus" required>
-                            <option value="Solteiro" disabled="" hidden="" selected="">Selecione uma opção</option>
+                        <select name="maritalStatus" id="maritalStatus" required onblur="checkRequire('maritalStatus')">
+                            <option value="" disabled="" hidden="" selected="">Selecione uma opção</option>
                             <option value="Solteiro">Solteiro</option>
                             <option value="Casado">Casado</option>
-                            <option value="Separado">Separado</option>
-                            <option value="Divorciado">Divorciado</option>
-                            <option value="Viúvo">Viúvo</option>
+                            <option value="Outros">Outros</option>
                         </select>
                     </div>
+                    <div id="maritalStatus-error" class="error"></div>
 
                     <div class="input-block">
                         <label for="city">Cidade:</label>
-                        <input name="city" id="city" type="text" required>
+                        <input name="city" id="city" type="text" required onblur="checkRequire('city')">
                     </div>
+                    <div id="city-error" class="error"></div>
 
                     <div class="input-block">
                         <label for="state">Estado: <small>(UF)</small></label>
-                        <input name="state" id="state" type="text" maxlength="2" minlength="2" required>
+                        <input name="state" id="state" type="text" maxlength="2" minlength="2" required
+                            onblur="checkUF()">
                     </div>
+                    <div id="state-error" class="error"></div>
 
                     <div class="input-block">
                         <label for="cep">CEP: <small>(somente números)</small></label>
-                        <input name="cep" id="cep" type="number" maxlength="11" minlength="11" required>
+                        <input name="cep" id="cep" type="text" maxlength="8" minlength="8" required onblur="checkCEP()">
                     </div>
+                    <div id="cep-error" class="error"></div>
 
                     <div class="input-block">
                         <label for="email">E-mail:</label>
-                        <input name="email" id="email" type="email" required>
+                        <input name="email" id="email" type="email" required onblur="checkEmail()">
                     </div>
+                    <div id="email-error" class="error"></div>
 
                     <div class="input-block">
                         <label for="password">Senha:</label>
-                        <input name="password" id="password" type="password" minlength="6" required>
+                        <input name="password" id="password" type="password" minlength="6" maxlength="12" required
+                            onblur="checkPassword()">
                     </div>
+                    <div id="password-error" class="error"></div>
 
                     <div class="input-block">
                         <label for="passwordConfirm">Confirme sua senha:</label>
-                        <input name="passwordConfirm" id="passwordConfirm" type="password" minlength="6" required>
+                        <input name="passwordConfirm" id="passwordConfirm" type="password" minlength="6"
+                            onpaste="return false;" oncopy="return false" oncut="return false" ondrag="return false"
+                            ondrop="return false" required onblur="checkPasswordConf()">
                     </div>
+                    <div id="passwordConfirm-error" class="error"></div>
                 </fieldset>
             </form>
 
@@ -149,6 +163,7 @@
         </main>
     </div>
 
+    <script src="scripts/form-validation.js"> </script>
 </body>
 
 </html>
